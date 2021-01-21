@@ -1,13 +1,7 @@
-// Importando o express
+const router = require('./routes')
 const express = require('express')
-
-// Importando o bodyParser
 const bodyParser = require('body-parser')
-
-// Importando o path (que nos permite gerenciar os caminhos no projeto mais facilmente)
 const path = require('path')
-
-// Instanciando o express na variável app
 const app = express()
 
 // Importando o dotenv
@@ -26,3 +20,13 @@ app.use(bodyParser.urlencoded({
 
 // Por fim, precisamos instruir o servidor a observar (listen) a porta definida - isso nos permite acessar localhost:PORTA_DEFINIDA para visualizarmos nosso projeto. Perceba que, além da porta, podemos passar um segundo parâmetro - uma função callback que, nesse caso, retorna um console.log para avisar que o servidor está 'rodando' na porta definida.
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
+
+// Importando o arquivo routes.js
+
+
+// [...]
+
+// Definindo o uso do arquivo para a rota principal
+app.use('/', router)
+
+
